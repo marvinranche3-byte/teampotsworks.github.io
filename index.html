@@ -5,42 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PotsWorks Cointab: Kiosk Ultimate Powerup</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0d0d0d; color: white; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            color: white; 
+            /* GIF BACKGROUND WITH DARK OVERLAY */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('480xML_Logo.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #0d0d0d; /* Fallback color */
+        }
         
         /* Header Section */
-        header { background: radial-gradient(circle, #ff1a1a 0%, #330000 100%); padding: 50px 20px; text-align: center; border-bottom: 5px solid #ffcc00; }
-        header h1 { color: #ffcc00; font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        header h2 { font-size: 1.2rem; color: #ffcccc; margin-top: -10px; text-transform: uppercase; }
-        .developers { font-size: 0.9rem; color: #ffcccc; background-color: rgba(255, 0, 0, 0.3); display: inline-block; padding: 10px 25px; border-radius: 50px; border: 1px solid #ff1a1a; margin-top: 15px; }
+        header { 
+            background: rgba(255, 26, 26, 0.2); 
+            padding: 60px 20px; 
+            text-align: center; 
+            border-bottom: 4px solid #ffcc00;
+            backdrop-filter: blur(5px);
+        }
+        header h1 { color: #ffcc00; font-size: 3.5rem; text-transform: uppercase; letter-spacing: 3px; margin: 0; text-shadow: 3px 3px 10px rgba(0,0,0,0.7); }
+        header h2 { font-size: 1.2rem; color: #ffcccc; margin-top: 5px; text-transform: uppercase; letter-spacing: 2px; }
+        .developers { font-size: 0.9rem; color: #fff; background-color: rgba(255, 0, 0, 0.5); display: inline-block; padding: 10px 25px; border-radius: 50px; border: 1px solid #ff1a1a; margin-top: 20px; font-weight: bold; }
         
         /* Main Container */
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; padding-bottom: 80px; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; padding-bottom: 100px; }
         
         /* Action Buttons */
-        .action-buttons { text-align: center; margin-bottom: 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .btn { display: inline-block; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.1rem; cursor: pointer; border: 2px solid; transition: all 0.3s ease; min-width: 250px; }
+        .action-buttons { text-align: center; margin-bottom: 60px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .btn { display: inline-block; padding: 18px 35px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.1rem; cursor: pointer; border: 2px solid; transition: all 0.3s ease; min-width: 280px; text-transform: uppercase; }
         .btn-app { background-color: #ffcc00; color: #000; border-color: #ffcc00; }
         .btn-flasher { background-color: #ff1a1a; color: #fff; border-color: #ff1a1a; }
-        .btn-tutorial { background-color: transparent; color: #fff; border-color: #555; }
+        .btn-tutorial { background-color: rgba(255,255,255,0.1); color: #fff; border-color: #fff; backdrop-filter: blur(10px); }
         
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3); }
-        .btn-flasher:hover { box-shadow: 0 5px 15px rgba(255, 26, 26, 0.3); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .btn-app:hover { background-color: #e6b800; }
+        .btn-flasher:hover { background-color: #cc0000; }
+        .btn-tutorial:hover { background-color: #fff; color: #000; }
         
         /* Features Grid */
-        h3.section-title { text-align: center; font-size: 2rem; color: #ffcc00; text-transform: uppercase; margin-bottom: 30px; border-bottom: 2px solid #330000; padding-bottom: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background-color: #1a1a1a; border-radius: 15px; border-left: 5px solid; padding: 20px; display: flex; align-items: flex-start; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        .red-card { border-left-color: #ff1a1a; }
-        .yellow-card { border-left-color: #ffcc00; }
-        .card h4 { margin: 0 0 5px 0; font-size: 1.2rem; }
+        h3.section-title { text-align: center; font-size: 2.2rem; color: #ffcc00; text-transform: uppercase; margin-bottom: 40px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { background-color: rgba(26, 26, 26, 0.9); border-radius: 15px; border-top: 4px solid; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
+        .red-card { border-top-color: #ff1a1a; }
+        .yellow-card { border-top-color: #ffcc00; }
+        .card h4 { margin: 0 0 10px 0; font-size: 1.4rem; text-transform: uppercase; }
         .red-card h4 { color: #ff1a1a; }
         .yellow-card h4 { color: #ffcc00; }
-        .card p { color: #ccc; margin: 0; font-size: 0.9rem; }
+        .card p { color: #eee; margin: 0; font-size: 1rem; line-height: 1.5; }
         
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); padding-top: 50px; }
-        .modal-content { background-color: #1a1a1a; margin: auto; padding: 30px; border: 1px solid #ff1a1a; border-radius: 15px; width: 85%; max-width: 600px; }
-        .close-btn { color: #fff; float: right; font-size: 30px; cursor: pointer; }
+        /* Modal Style */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); overflow-y: auto; }
+        .modal-content { background-color: #1a1a1a; margin: 5% auto; padding: 40px; border: 2px solid #ff1a1a; border-radius: 20px; width: 90%; max-width: 650px; position: relative; }
+        .close-btn { position: absolute; right: 20px; top: 10px; color: #fff; font-size: 35px; cursor: pointer; }
+        .close-btn:hover { color: #ff1a1a; }
+        .step-list { text-align: left; color: #ddd; font-size: 1.1rem; line-height: 1.8; }
+        .step-list strong { color: #ffcc00; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            .btn { min-width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -49,7 +78,7 @@
         <h2>Team PotsWorks Presents:</h2>
         <h1>COINTAB RENTAL</h1>
         <div class="developers">
-            Developers: <strong>Marvin Organo</strong> & <strong>Jaysus Bautista</strong>
+            Developers: Marvin Organo & Jaysus Bautista
         </div>
     </header>
 
@@ -61,49 +90,37 @@
             <span class="btn btn-tutorial" id="openTutorial">📜 VIEW TUTORIAL</span>
         </div>
 
-        <h3 class="section-title">Exclusive Features</h3>
+        <h3 class="section-title">Exclusive App Features</h3>
         
         <div class="grid">
             <div class="card red-card">
-                <div class="card-content">
-                    <h4>Advanced Kiosk Mode</h4>
-                    <p>Naka-lock ang Tablet sa App lang! (Hindi gagana ang Home/Back/Recents).</p>
-                </div>
+                <h4>🔒 Advanced Kiosk Mode</h4>
+                <p>Naka-lock ang Tablet sa App lang! Strictly disabled ang Home, Back, at Recent Apps para iwas takas sa rental session.</p>
             </div>
             
             <div class="card yellow-card">
-                <div class="card-content">
-                    <h4>Centralized Coinslot</h4>
-                    <p>Wi-Fi connection sa NodeMCU! Wireless pagdagdag ng oras.</p>
-                </div>
+                <h4>💰 Centralized Coinslot</h4>
+                <p>Full Wi-Fi integration gamit ang NodeMCU. Wireless ang pagdagdag ng oras kaya iwas hassle sa wiring.</p>
             </div>
 
             <div class="card red-card">
-                <div class="card-content">
-                    <h4>MLBB Resource Protection</h4>
-                    <p>Auto-rename folder bago logout. No Redownload ng 5GB+ ML Resources!</p>
-                </div>
+                <h4>🎮 MLBB Resource Protection</h4>
+                <p>Special feature na nire-rename ang ML files bago mag-logout. No more 5GB+ redownload sa bawat bagong user!</p>
             </div>
 
             <div class="card yellow-card">
-                <div class="card-content">
-                    <h4>Custom Time Rates</h4>
-                    <p>Set Admin Panel: Peso = Oras. Auto-calculate sa pulses.</p>
-                </div>
+                <h4>⏱️ Custom Time Rates</h4>
+                <p>Dynamic Admin Panel. Ikaw ang masusunod sa Peso-to-Minutes conversion. Auto-calculated base sa coinslot pulses.</p>
             </div>
 
             <div class="card red-card">
-                <div class="card-content">
-                    <h4>Deep Freeze</h4>
-                    <p>Block uninstall, factory reset, Google Accounts, at Safe Mode boot.</p>
-                </div>
+                <h4>❄️ Deep Freeze Security</h4>
+                <p>Protektado ang device laban sa uninstallation, factory reset, at Safe Mode. Naka-lock ang system settings mo.</p>
             </div>
 
             <div class="card yellow-card">
-                <div class="card-content">
-                    <h4>Battery Guard</h4>
-                    <p>Real-time Battery Temp monitor sa Admin Panel para iwas overheat.</p>
-                </div>
+                <h4>🔋 Battery Guard</h4>
+                <p>Real-time temperature monitoring. Makikita sa Admin Panel kung uminit na ang device para maiwasan ang damage.</p>
             </div>
         </div>
     </div>
@@ -111,13 +128,13 @@
     <div id="tutorialModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" id="closeTutorial">&times;</span>
-            <h2 style="color:#ffcc00">Installation Guide</h2>
-            <div style="text-align: left; line-height: 1.6; color: #eee;">
-                <p>1. I-download ang <strong>Cointab App</strong> sa iyong tablet.</p>
-                <p>2. I-download ang <strong>Owner Flasher</strong> sa iyong PC/Laptop.</p>
-                <p>3. Gamitin ang Flasher tool para i-set ang app bilang <strong>Device Owner</strong> (kailangan ito para sa Deep Freeze features).</p>
-                <p>4. Buksan ang app at i-set ang iyong custom rates sa Admin Panel.</p>
-                <p>5. Para sa wireless coinslot, i-connect ang NodeMCU sa parehong network.</p>
+            <h2 style="color:#ffcc00; text-align: center; text-transform: uppercase;">Quick Start Guide</h2>
+            <div class="step-list">
+                <p>1. <strong>Download:</strong> I-install ang <strong>Cointab App</strong> sa iyong Android Tablet.</p>
+                <p>2. <strong>Flasher:</strong> Gamitin ang <strong>Owner Flasher</strong> sa PC para gawing "Device Owner" ang app. Ito ang susi para sa Deep Freeze security.</p>
+                <p>3. <strong>Permissions:</strong> I-allow ang lahat ng permissions (Accessibility, Overlay, Admin) para gumana ang Kiosk Mode.</p>
+                <p>4. <strong>Admin Setup:</strong> Pumasok sa Admin Settings gamit ang default code mo para i-set ang rates at piliin ang apps sa <strong>App Picker</strong>.</p>
+                <p>5. <strong>Ready:</strong> I-connect ang NodeMCU sa WiFi at simulan na ang iyong rental business!</p>
             </div>
         </div>
     </div>
@@ -126,9 +143,11 @@
         var modal = document.getElementById("tutorialModal");
         var btn = document.getElementById("openTutorial");
         var span = document.getElementById("closeTutorial");
+
         btn.onclick = function() { modal.style.display = "block"; }
         span.onclick = function() { modal.style.display = "none"; }
         window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
     </script>
+
 </body>
 </html>
